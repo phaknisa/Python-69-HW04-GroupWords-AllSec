@@ -1,5 +1,15 @@
 def group_by_signature(words: list) -> list:
     pass
+    
+groups = {}
+    for w in words:
+        if not w:
+            continue
+        signature = "".join(sorted(w))
+        if signature not in groups:
+            groups[signature] = []
+        groups[signature].append(w)
+    return list(groups.values())
 
 if __name__ == "__main__":
     # Example 1
